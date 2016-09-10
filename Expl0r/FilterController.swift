@@ -8,17 +8,25 @@
 
 import UIKit
 
-class FilterController: UIViewController {
+class FilterController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
-    @IBOutlet var timeTextField: UITextField!
-    @IBOutlet var timeDropDown: UIPickerView!
+    @IBOutlet weak var timeDropDown: UIPickerView!
 
-    var timeList = ["Full day", "Half day", "Surprise me!"]
-
-
+    @IBOutlet weak var timeTextField: UITextField!
+    
+    var timeList = ["Full-day", "Half-day", "Surprise me!"]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        // Connect data for time drop down menu
+        self.timeDropDown.delegate = self
+        self.timeDropDown.dataSource = self
+        self.timeDropDown.hidden = true
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -26,25 +34,25 @@ class FilterController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int
+    {
         return 1
     }
-    
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
         return timeList.count
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        
-        self.view.endEditing(true)
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
+    {
+        self.view.endEditing(false)
         return timeList[row]
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        self.timeTextField.text = self.timeList[row]
+        self.timeTextField.text = timeList[row]
         self.timeDropDown.hidden = true
         
     }
@@ -52,7 +60,7 @@ class FilterController: UIViewController {
     func textFieldDidBeginEditing(textField: UITextField)
     {
         if textField == self.timeTextField {
-            self.timeDropDown.hidden = true
+            self.timeDropDown.hidden = false
             timeTextField.endEditing(true)
         }
     }

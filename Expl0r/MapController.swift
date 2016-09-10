@@ -32,6 +32,8 @@ class MapController: UIViewController {
                 self.centerMapAtLocation(location)
             }
         })
+        let cathy = Artwork(title: "Cathedral of Learning", discipline: "church", coordinate: CLLocationCoordinate2D(latitude: 40.444247, longitude: -79.953338))
+        mapView.addAnnotation(cathy)
       
     }
     let regionRadius: Double = 1000

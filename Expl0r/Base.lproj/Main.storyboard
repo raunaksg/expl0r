@@ -101,16 +101,6 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="Food" translatesAutoresizingMaskIntoConstraints="NO" id="x4Y-p4-Rgg">
                                 <rect key="frame" x="132" y="417" width="57" height="20"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z7H-eu-i0d">
-                                <rect key="frame" x="206" y="362" width="122" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l1M-SS-JaP">
-                                <rect key="frame" x="206" y="412" width="122" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVb-8A-dw5">
                                 <rect key="frame" x="172" y="481" width="57" height="34"/>
                                 <state key="normal" image="GO!" backgroundImage="Rectangle 7">
@@ -120,41 +110,34 @@
                                     <segue destination="Ovd-ZQ-2cG" kind="show" id="qAh-wX-TDd"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VaR-jW-R4M">
-                                <rect key="frame" x="0.0" y="460" width="375" height="216"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w7i-TJ-dRt">
+                                <rect key="frame" x="208" y="310" width="111" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="0pY-lq-Bsp" id="e9H-3d-eQv"/>
+                                </connections>
+                            </textField>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R7V-j9-ocK">
+                                <rect key="frame" x="0.0" y="451" width="375" height="216"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="0pY-lq-Bsp" id="0M0-wj-Ogj"/>
-                                    <outlet property="delegate" destination="0pY-lq-Bsp" id="PbN-Uw-AbA"/>
+                                    <outlet property="dataSource" destination="0pY-lq-Bsp" id="92h-5i-DdQ"/>
+                                    <outlet property="delegate" destination="0pY-lq-Bsp" id="kdu-0I-1LL"/>
                                 </connections>
                             </pickerView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jac-dG-0j8">
-                                <rect key="frame" x="206" y="310" width="122" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="0pY-lq-Bsp" id="8vq-XQ-PLM"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sFU-n8-ENZ">
-                                <rect key="frame" x="206" y="260" width="122" height="30"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="timeDropDown" destination="VaR-jW-R4M" id="sH2-bN-iCY"/>
-                        <outlet property="timeTextField" destination="jac-dG-0j8" id="W6z-P2-9lO"/>
+                        <outlet property="timeDropDown" destination="R7V-j9-ocK" id="6Qe-jm-Nbx"/>
+                        <outlet property="timeTextField" destination="w7i-TJ-dRt" id="mhL-aT-ttr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uJU-VI-Tz5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="742.5" y="375.5"/>
+            <point key="canvasLocation" x="748.5" y="367.5"/>
         </scene>
         <!--Map Controller-->
         <scene sceneID="hDv-ld-QaG">
@@ -169,46 +152,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0e7-0f-fpG">
-                                <rect key="frame" x="0.0" y="20" width="375" height="376"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="570"/>
                             </mapView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9RJ-eu-C1a">
-                                <rect key="frame" x="0.0" y="347.5" width="375" height="319"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="e7p-o8-pEV" style="IBUITableViewCellStyleDefault" id="IBo-PV-Cbc">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IBo-PV-Cbc" id="ecg-Gv-lQZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Name of location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e7p-o8-pEV">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="9RJ-eu-C1a" firstAttribute="leading" secondItem="OCd-wo-PQ2" secondAttribute="leading" id="23K-rf-3Fo"/>
                             <constraint firstItem="0e7-0f-fpG" firstAttribute="leading" secondItem="OCd-wo-PQ2" secondAttribute="leading" id="AL6-Iu-Ekj"/>
                             <constraint firstItem="0e7-0f-fpG" firstAttribute="leading" secondItem="OCd-wo-PQ2" secondAttribute="leadingMargin" id="Gjq-qx-PQ2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0e7-0f-fpG" secondAttribute="trailing" id="KWl-to-2bW"/>
                             <constraint firstItem="0e7-0f-fpG" firstAttribute="top" secondItem="GJC-Qy-BGg" secondAttribute="bottom" id="QTI-aO-wAY"/>
-                            <constraint firstItem="aqt-bw-OKL" firstAttribute="top" secondItem="9RJ-eu-C1a" secondAttribute="bottom" id="VZv-CU-e6T"/>
-                            <constraint firstAttribute="trailing" secondItem="9RJ-eu-C1a" secondAttribute="trailing" id="gOv-Fs-tSs"/>
                             <constraint firstAttribute="trailing" secondItem="0e7-0f-fpG" secondAttribute="trailing" id="wJM-dL-zVp"/>
-                            <constraint firstItem="9RJ-eu-C1a" firstAttribute="leading" secondItem="OCd-wo-PQ2" secondAttribute="leading" id="wfb-OG-fdA"/>
                             <constraint firstItem="0e7-0f-fpG" firstAttribute="top" secondItem="GJC-Qy-BGg" secondAttribute="bottom" id="wwG-YP-7DA"/>
-                            <constraint firstItem="9RJ-eu-C1a" firstAttribute="height" secondItem="0e7-0f-fpG" secondAttribute="height" id="xYy-Ba-5eK"/>
-                            <constraint firstAttribute="trailing" secondItem="9RJ-eu-C1a" secondAttribute="trailing" id="yVX-qj-yeh"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
