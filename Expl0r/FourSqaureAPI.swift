@@ -46,23 +46,7 @@ class VenueAPI
 
         
     }
-    
-<<<<<<< HEAD
-    func getChosenVenue(location: CLLocation, queryType: String) -> VenueStruct {
-        var chosenVenues = [VenueStruct]()
-        if let session = self.session {
-            var parameters = location.parameters()
-            parameters += [Parameter.query:queryType]
-            parameters += [Parameter.radius: "5000"]
-            parameters += [Parameter.limit: "20"]
-            
-            let searchTask = session.venues.search(parameters)
-            {
-                
-            }
-        }
-    }
-=======
+
     func getChosenVenue(location: CLLocation, queryType: String) -> Void {
         var chosenVenues = [VenueStruct]()
         if let session = self.session {
@@ -112,7 +96,6 @@ class VenueAPI
         }
         return
     }
->>>>>>> fa040266bdd856034563424fa68dbab33892b474
 }
 
 extension CLLocation

@@ -16,15 +16,6 @@ class FilterController: UIViewController, UIPickerViewDelegate, UIPickerViewData
     
     var timeList = ["Full-day", "Half-day", "Surprise me!"]
 
-
-    @IBAction func goButtonPressed(sender: UIButton)
-    {
-        if timeTextField.text == "Surprise me!"
-        {
-            performSegueWithIdentifier("ToActivitySegue", sender: self)
-        }
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

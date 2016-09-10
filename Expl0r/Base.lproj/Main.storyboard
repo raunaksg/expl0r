@@ -105,14 +105,13 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="How much time do you" translatesAutoresizingMaskIntoConstraints="NO" id="G27-XC-5Fz">
                                 <rect key="frame" x="93" y="171" width="195" height="135"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVb-8A-dw5">
-                                <rect key="frame" x="217" y="349" width="57" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTG-e9-fih">
+                                <rect key="frame" x="220" y="349" width="59" height="34"/>
                                 <state key="normal" image="GO!" backgroundImage="Rectangle 7">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="goButtonPressed:" destination="0pY-lq-Bsp" eventType="touchUpInside" id="Gvj-nK-sED"/>
-                                    <action selector="timeButton:" destination="0pY-lq-Bsp" eventType="touchUpInside" id="Dfq-bu-DVO"/>
+                                    <segue destination="Ovd-ZQ-2cG" kind="show" id="frA-pl-1iw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -122,66 +121,11 @@
                     <connections>
                         <outlet property="timeDropDown" destination="R7V-j9-ocK" id="6Qe-jm-Nbx"/>
                         <outlet property="timeTextField" destination="w7i-TJ-dRt" id="mhL-aT-ttr"/>
-                        <segue destination="Ovd-ZQ-2cG" kind="show" identifier="ToMapSegue" id="Dyg-PP-4HZ"/>
-                        <segue destination="es8-Gu-7AO" kind="show" identifier="ToActivitySegue" id="Ej1-DR-zlO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uJU-VI-Tz5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="756.5" y="51.5"/>
-        </scene>
-        <!--Activity Controller-->
-        <scene sceneID="5mP-9a-D8x">
-            <objects>
-                <viewController id="es8-Gu-7AO" customClass="ActivityController" customModule="Expl0r" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="6g5-YM-zq7"/>
-                        <viewControllerLayoutGuide type="bottom" id="yE1-7h-xGO"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hxL-Am-LRr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="socal" translatesAutoresizingMaskIntoConstraints="NO" id="0dK-Yr-SoP">
-                                <rect key="frame" x="-3" y="-4" width="380" height="675"/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="What are you looking" translatesAutoresizingMaskIntoConstraints="NO" id="fLo-Hz-pLK">
-                                <rect key="frame" x="79" y="180" width="214" height="127"/>
-                            </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Oi-8w-7TK">
-                                <rect key="frame" x="79" y="350" width="111" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="es8-Gu-7AO" id="t47-Xx-w3q"/>
-                                </connections>
-                            </textField>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8pY-wH-63g">
-                                <rect key="frame" x="-3" y="451" width="378" height="216"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="es8-Gu-7AO" id="mrZ-u4-4xc"/>
-                                    <outlet property="delegate" destination="es8-Gu-7AO" id="LrD-3a-Cau"/>
-                                </connections>
-                            </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbl-0l-a5d">
-                                <rect key="frame" x="206" y="350" width="55" height="30"/>
-                                <state key="normal" image="GO!" backgroundImage="Rectangle 7">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="activityDropDown" destination="8pY-wH-63g" id="hRa-bE-a4O"/>
-                        <outlet property="activityTextField" destination="6Oi-8w-7TK" id="okh-pI-qYp"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oOO-WI-iL6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1166.5" y="1084.5"/>
         </scene>
         <!--Map Controller-->
         <scene sceneID="hDv-ld-QaG">
@@ -224,9 +168,7 @@
         <image name="GO!" width="40" height="19"/>
         <image name="How much time do you" width="195" height="135"/>
         <image name="Rectangle 7" width="46" height="27"/>
-        <image name="What are you looking" width="214" height="127"/>
         <image name="mountains" width="375" height="667"/>
         <image name="park" width="375" height="667"/>
-        <image name="socal" width="375" height="667"/>
     </resources>
 </document>
