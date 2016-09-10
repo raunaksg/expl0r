@@ -86,38 +86,6 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="park" translatesAutoresizingMaskIntoConstraints="NO" id="uGF-wb-4Hh">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="FILTER" translatesAutoresizingMaskIntoConstraints="NO" id="VyO-kf-n9h">
-                                <rect key="frame" x="114" y="166" width="162" height="37"/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="Distance" translatesAutoresizingMaskIntoConstraints="NO" id="Z5K-9i-Pcx">
-                                <rect key="frame" x="91" y="265" width="99" height="20"/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="Time" translatesAutoresizingMaskIntoConstraints="NO" id="jt8-Do-ZcJ">
-                                <rect key="frame" x="135" y="315" width="56" height="20"/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="Price" translatesAutoresizingMaskIntoConstraints="NO" id="5zW-Fb-ukg">
-                                <rect key="frame" x="132" y="367" width="58" height="20"/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="Food" translatesAutoresizingMaskIntoConstraints="NO" id="x4Y-p4-Rgg">
-                                <rect key="frame" x="132" y="417" width="57" height="20"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVb-8A-dw5">
-                                <rect key="frame" x="172" y="481" width="57" height="34"/>
-                                <state key="normal" image="GO!" backgroundImage="Rectangle 7">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Ovd-ZQ-2cG" kind="show" id="qAh-wX-TDd"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w7i-TJ-dRt">
-                                <rect key="frame" x="208" y="310" width="111" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="0pY-lq-Bsp" id="e9H-3d-eQv"/>
-                                </connections>
-                            </textField>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R7V-j9-ocK">
                                 <rect key="frame" x="0.0" y="451" width="375" height="216"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -126,6 +94,26 @@
                                     <outlet property="delegate" destination="0pY-lq-Bsp" id="kdu-0I-1LL"/>
                                 </connections>
                             </pickerView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w7i-TJ-dRt">
+                                <rect key="frame" x="93" y="351" width="111" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="0pY-lq-Bsp" id="e9H-3d-eQv"/>
+                                </connections>
+                            </textField>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="How much time do you" translatesAutoresizingMaskIntoConstraints="NO" id="G27-XC-5Fz">
+                                <rect key="frame" x="93" y="171" width="195" height="135"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVb-8A-dw5">
+                                <rect key="frame" x="217" y="349" width="57" height="34"/>
+                                <state key="normal" image="GO!" backgroundImage="Rectangle 7">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Ovd-ZQ-2cG" kind="show" id="qAh-wX-TDd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -138,6 +126,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uJU-VI-Tz5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="748.5" y="367.5"/>
+        </scene>
+        <!--Activity Controller-->
+        <scene sceneID="5mP-9a-D8x">
+            <objects>
+                <viewController id="es8-Gu-7AO" customClass="ActivityController" customModule="Expl0r" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6g5-YM-zq7"/>
+                        <viewControllerLayoutGuide type="bottom" id="yE1-7h-xGO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hxL-Am-LRr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="socal" translatesAutoresizingMaskIntoConstraints="NO" id="0dK-Yr-SoP">
+                                <rect key="frame" x="-3" y="-4" width="380" height="675"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="What are you looking" translatesAutoresizingMaskIntoConstraints="NO" id="fLo-Hz-pLK">
+                                <rect key="frame" x="80" y="206" width="214" height="127"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Oi-8w-7TK">
+                                <rect key="frame" x="85" y="377" width="111" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="es8-Gu-7AO" id="t47-Xx-w3q"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbl-0l-a5d">
+                                <rect key="frame" x="210" y="377" width="55" height="30"/>
+                                <state key="normal" image="GO!" backgroundImage="Rectangle 7">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8pY-wH-63g">
+                                <rect key="frame" x="-3" y="451" width="378" height="216"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="es8-Gu-7AO" id="mrZ-u4-4xc"/>
+                                    <outlet property="delegate" destination="es8-Gu-7AO" id="LrD-3a-Cau"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="activityDropDown" destination="8pY-wH-63g" id="hRa-bE-a4O"/>
+                        <outlet property="activityTextField" destination="6Oi-8w-7TK" id="okh-pI-qYp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oOO-WI-iL6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="756.5" y="1133.5"/>
         </scene>
         <!--Map Controller-->
         <scene sceneID="hDv-ld-QaG">
@@ -176,15 +217,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Distance" width="99" height="20"/>
         <image name="EXPLORE" width="235" height="42"/>
-        <image name="FILTER" width="162" height="37"/>
-        <image name="Food" width="57" height="20"/>
         <image name="GO!" width="40" height="19"/>
-        <image name="Price" width="58" height="20"/>
+        <image name="How much time do you" width="195" height="135"/>
         <image name="Rectangle 7" width="46" height="27"/>
-        <image name="Time" width="56" height="20"/>
+        <image name="What are you looking" width="214" height="127"/>
         <image name="mountains" width="375" height="667"/>
         <image name="park" width="375" height="667"/>
+        <image name="socal" width="375" height="667"/>
     </resources>
 </document>
