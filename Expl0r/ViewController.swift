@@ -7,11 +7,18 @@
 //
 
 import UIKit
+import MapKit
+
+public var inputtedAddress = ""
 
 class ViewController: UIViewController {
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        textField.textColor = textColor
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -21,18 +28,20 @@ class ViewController: UIViewController {
     }
     
     @IBOutlet var textField: UITextField!
-    
-    
+
     
     @IBAction func AddButton(sender: UIButton) {
         
-        let newItem = textField.text
+        inputtedAddress = textField.text!
         textField.keyboardType = UIKeyboardType.Default
         textField.resignFirstResponder()
-        
-        print(newItem)
-        
+    
     }
     
-}
+    
+    
+    
 
+    
+
+}
