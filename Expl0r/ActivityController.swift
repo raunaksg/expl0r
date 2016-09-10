@@ -32,6 +32,8 @@ class ActivityController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         let tap = UITapGestureRecognizer(target: self, action: #selector(FilterController.didTapDropDown))
         self.view.addGestureRecognizer(tap)
         
+     
+        
     }
     
     override func didReceiveMemoryWarning() {

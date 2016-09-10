@@ -15,6 +15,15 @@ class FilterController: UIViewController, UIPickerViewDelegate, UIPickerViewData
     @IBOutlet weak var timeTextField: UITextField!
     
     var timeList = ["Full-day", "Half-day", "Surprise me!"]
+
+
+    @IBAction func goButtonPressed(sender: UIButton)
+    {
+        if timeTextField.text == "Surprise me!"
+        {
+            performSegueWithIdentifier("ToActivitySegue", sender: self)
+        }
+    }
     
     
     override func viewDidLoad() {
@@ -30,7 +39,6 @@ class FilterController: UIViewController, UIPickerViewDelegate, UIPickerViewData
         let tap = UITapGestureRecognizer(target: self, action: #selector(FilterController.didTapDropDown))
         self.view.addGestureRecognizer(tap)
     
-
     }
     
     override func didReceiveMemoryWarning() {

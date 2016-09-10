@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A254g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -111,7 +111,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Ovd-ZQ-2cG" kind="show" id="qAh-wX-TDd"/>
+                                    <action selector="goButtonPressed:" destination="0pY-lq-Bsp" eventType="touchUpInside" id="Gvj-nK-sED"/>
+                                    <action selector="timeButton:" destination="0pY-lq-Bsp" eventType="touchUpInside" id="Dfq-bu-DVO"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -121,11 +122,13 @@
                     <connections>
                         <outlet property="timeDropDown" destination="R7V-j9-ocK" id="6Qe-jm-Nbx"/>
                         <outlet property="timeTextField" destination="w7i-TJ-dRt" id="mhL-aT-ttr"/>
+                        <segue destination="Ovd-ZQ-2cG" kind="show" identifier="ToMapSegue" id="Dyg-PP-4HZ"/>
+                        <segue destination="es8-Gu-7AO" kind="show" identifier="ToActivitySegue" id="Ej1-DR-zlO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uJU-VI-Tz5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="748.5" y="367.5"/>
+            <point key="canvasLocation" x="756.5" y="51.5"/>
         </scene>
         <!--Activity Controller-->
         <scene sceneID="5mP-9a-D8x">
@@ -143,22 +146,16 @@
                                 <rect key="frame" x="-3" y="-4" width="380" height="675"/>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="What are you looking" translatesAutoresizingMaskIntoConstraints="NO" id="fLo-Hz-pLK">
-                                <rect key="frame" x="80" y="206" width="214" height="127"/>
+                                <rect key="frame" x="79" y="180" width="214" height="127"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Oi-8w-7TK">
-                                <rect key="frame" x="85" y="377" width="111" height="30"/>
+                                <rect key="frame" x="79" y="350" width="111" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="es8-Gu-7AO" id="t47-Xx-w3q"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbl-0l-a5d">
-                                <rect key="frame" x="210" y="377" width="55" height="30"/>
-                                <state key="normal" image="GO!" backgroundImage="Rectangle 7">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8pY-wH-63g">
                                 <rect key="frame" x="-3" y="451" width="378" height="216"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -167,6 +164,12 @@
                                     <outlet property="delegate" destination="es8-Gu-7AO" id="LrD-3a-Cau"/>
                                 </connections>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbl-0l-a5d">
+                                <rect key="frame" x="206" y="350" width="55" height="30"/>
+                                <state key="normal" image="GO!" backgroundImage="Rectangle 7">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -178,7 +181,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oOO-WI-iL6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="756.5" y="1133.5"/>
+            <point key="canvasLocation" x="1166.5" y="1084.5"/>
         </scene>
         <!--Map Controller-->
         <scene sceneID="hDv-ld-QaG">
@@ -213,7 +216,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERc-tK-MOC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1192.5" y="367.5"/>
+            <point key="canvasLocation" x="1226.5" y="193.5"/>
         </scene>
     </scenes>
     <resources>
