@@ -26,6 +26,10 @@ class FilterController: UIViewController, UIPickerViewDelegate, UIPickerViewData
         self.timeDropDown.delegate = self
         self.timeDropDown.dataSource = self
         self.timeDropDown.hidden = true
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(FilterController.didTapDropDown))
+        self.view.addGestureRecognizer(tap)
+    
 
     }
     
@@ -63,6 +67,13 @@ class FilterController: UIViewController, UIPickerViewDelegate, UIPickerViewData
             self.timeDropDown.hidden = false
             timeTextField.endEditing(true)
         }
+    }
+    
+    func didTapDropDown()
+    {
+//        self.timeDropDown.selectedRowInComponent(<#T##component: Int##Int#>)
+//        self.view.endEditing(true)
+        self.timeDropDown.hidden = true
     }
 
 
