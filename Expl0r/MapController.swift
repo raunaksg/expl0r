@@ -10,15 +10,22 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapController: UIViewController {
+var currentVenue = VenueStruct()
+
+class MapController: UIViewController, VenueAPIDelegate {
     
     @IBOutlet var mapView: MKMapView!
     
     var initialLocation = CLLocation(latitude: 39.952073, longitude: -75.205591)
     
+    func didReceive(venues: [VenueStruct]) -> Void {
+        currentVenue = venues[Int(arc4random_uniform(UInt32(venues.count)))]
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let geocoder = CLGeocoder()
+        let foursquareAPI = VenueAPI(currDelegate: self)
         let address = inputtedAddress
         geocoder.geocodeAddressString(address, completionHandler: {(placemarks, error) -> Void in
             if((error) != nil) {
@@ -30,10 +37,13 @@ class MapController: UIViewController {
                 let currLongitude = coordinates.longitude
                 let location = CLLocation(latitude: currLatitude, longitude: currLongitude)
                 self.centerMapAtLocation(location)
+                foursquareAPI.getChosenVenue(location, queryType: "Coffee")
+                
             }
         })
-        let cathy = Artwork(title: "Cathedral of Learning", discipline: "church", coordinate: CLLocationCoordinate2D(latitude: 40.444247, longitude: -79.953338))
-        mapView.addAnnotation(cathy)
+        //let cathy = Artwork(title: "Cathedral of Learning", discipline: "church", coordinate: CLLocationCoordinate2D(latitude: 40.444247, longitude: -79.953338))
+        //mapView.addAnnotation(cathy)
+        
       
     }
     let regionRadius: Double = 1000

@@ -20,16 +20,21 @@ struct API {
 struct VenueStruct {
     var id = ""
     var name = ""
-    var latitude: Double = 0
-    var longitude: Double = 0
+    var latitude: Float = 0
+    var longitude: Float = 0
+}
+
+protocol VenueAPIDelegate: class {
+    func didReceive(venues: [VenueStruct])
 }
 
 class VenueAPI
 {
-    static let sharedInstance = VenueAPI()
+    //static let sharedInstance = VenueAPI()
     var session: Session?
+    weak var delegate: VenueAPIDelegate?
     
-    init()
+    init(currDelegate: VenueAPIDelegate?)
     {
         /* set up client and start session */
         
@@ -37,11 +42,12 @@ class VenueAPI
         let configuration = Configuration(client:client)
         Session.setupSharedSessionWithConfiguration(configuration)
         self.session = Session.sharedSession()
+        delegate = currDelegate
 
         
     }
     
-    func getChosenVenue(location: CLLocation, queryType: String) -> VenueStruct {
+    func getChosenVenue(location: CLLocation, queryType: String) -> Void {
         var chosenVenues = [VenueStruct]()
         if let session = self.session {
             var parameters = location.parameters()
@@ -51,9 +57,44 @@ class VenueAPI
             
             let searchTask = session.venues.search(parameters)
             {
+                (result) -> Void in
                 
+                if let response = result.response
+                {
+                    if let venues = response["venues"] as? [[String: AnyObject]]
+                    {
+                        for venue in venues
+                        {
+                            var currVenue = VenueStruct()
+                            
+                            if let id = venue["id"] as? String
+                            {
+                                currVenue.id = id
+                            }
+                            if let name = venue["name"] as? String
+                            {
+                                currVenue.name = name
+                            }
+                            if let venueLocation = venue["location"] as? [String: AnyObject]
+                            {
+                                if let latitude = venueLocation["lat"] as? Float
+                                {
+                                    currVenue.latitude = latitude
+                                }
+                                if let longitude = venueLocation["lng"] as? Float
+                                {
+                                    currVenue.longitude = longitude
+                                }
+                            }
+                            chosenVenues.append(currVenue)
+                        }
+                        self.delegate?.didReceive(chosenVenues)
+                    }
+                }
             }
+            searchTask.start()
         }
+        return
     }
 }
 
