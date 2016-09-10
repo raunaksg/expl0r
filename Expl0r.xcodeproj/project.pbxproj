@@ -17,6 +17,8 @@
 		9F2B9E361D83886E00940003 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F2B9E341D83886E00940003 /* Main.storyboard */; };
 		9F2B9E381D83886E00940003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F2B9E371D83886E00940003 /* Assets.xcassets */; };
 		9F2B9E3B1D83886E00940003 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F2B9E391D83886E00940003 /* LaunchScreen.storyboard */; };
+		9F6420451D844EA9008594F8 /* FourSqaureAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6420441D844EA9008594F8 /* FourSqaureAPI.swift */; };
+		9F6420471D844F4F008594F8 /* QuadratTouch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F6420461D844F4F008594F8 /* QuadratTouch.framework */; };
 		CBC28F87AF2A64199E1CCCE1 /* Pods_Expl0r.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631A6256421CFAA9C66D8E49 /* Pods_Expl0r.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,7 +27,7 @@
 		631A6256421CFAA9C66D8E49 /* Pods_Expl0r.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Expl0r.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66D25C2402657BAF1395D41B /* Pods-Expl0r.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Expl0r.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Expl0r/Pods-Expl0r.debug.xcconfig"; sourceTree = "<group>"; };
 		93CA2A741D83A81100FFBB98 /* FilterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterController.swift; sourceTree = "<group>"; };
-		93CA2A781D83B97500FFBB98 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		93CA2A781D83B97500FFBB98 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93CC7E211D83CB7C000AFC32 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		93CC7E231D83D286000AFC32 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		93E005291D843EA3005CBD5A /* AnnotationAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnotationAPI.swift; sourceTree = "<group>"; };
@@ -36,6 +38,8 @@
 		9F2B9E371D83886E00940003 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F2B9E3A1D83886E00940003 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F2B9E3C1D83886E00940003 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F6420441D844EA9008594F8 /* FourSqaureAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourSqaureAPI.swift; sourceTree = "<group>"; };
+		9F6420461D844F4F008594F8 /* QuadratTouch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuadratTouch.framework; path = "../../../Library/Developer/Xcode/DerivedData/Expl0r-hlgmaucvioejpmclikwkdwkbptpv/Build/Products/Debug-iphonesimulator/QuadratTouch/QuadratTouch.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F6420471D844F4F008594F8 /* QuadratTouch.framework in Frameworks */,
 				93CC7E221D83CB7C000AFC32 /* MapKit.framework in Frameworks */,
 				CBC28F87AF2A64199E1CCCE1 /* Pods_Expl0r.framework in Frameworks */,
 			);
@@ -91,6 +96,7 @@
 				9F2B9E391D83886E00940003 /* LaunchScreen.storyboard */,
 				9F2B9E3C1D83886E00940003 /* Info.plist */,
 				93E005291D843EA3005CBD5A /* AnnotationAPI.swift */,
+				9F6420441D844EA9008594F8 /* FourSqaureAPI.swift */,
 			);
 			path = Expl0r;
 			sourceTree = "<group>";
@@ -98,6 +104,7 @@
 		C4CA99D460DD2E66B9521670 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9F6420461D844F4F008594F8 /* QuadratTouch.framework */,
 				93CC7E211D83CB7C000AFC32 /* MapKit.framework */,
 				631A6256421CFAA9C66D8E49 /* Pods_Expl0r.framework */,
 			);
@@ -232,6 +239,7 @@
 				9F2B9E331D83886E00940003 /* ViewController.swift in Sources */,
 				9F2B9E311D83886E00940003 /* AppDelegate.swift in Sources */,
 				93E0052A1D843EA3005CBD5A /* AnnotationAPI.swift in Sources */,
+				9F6420451D844EA9008594F8 /* FourSqaureAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
